@@ -13,8 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('credentials', function (Blueprint $table) {
-            //$table->uuid('id')->primary();
-            $table->uuid('id')->primary()->default(DB::raw('(UUID())'));
+            $table->uuid('id')->primary();
             $table->string('type_permission', 50);
             $table->timestamps();
         });

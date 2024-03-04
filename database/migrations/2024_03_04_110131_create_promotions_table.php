@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('promotions', function (Blueprint $table) {
-            $table->uuid('id')->primary()->default(DB::raw('(UUID())'));
+            $table->uuid('id')->primary();
             $table->dateTime('starting_date');
             $table->dateTime('end_date');
             $table->integer('value');

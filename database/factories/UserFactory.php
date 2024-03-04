@@ -33,7 +33,8 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
-            'credential_id' => fake()->randomElement(Credential::pluck('id')->toArray()),
+            //'credential_id' => fake()->randomElement(Credential::pluck('id')->toArray()),
+            'credential_id' => fake()->randomElement(Credential::pluck('id'))
         ];
     }
 

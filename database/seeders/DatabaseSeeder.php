@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Category;
+use App\Models\Order;
 use Illuminate\Database\Seeder;
 
 
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
             Url_imgSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
+            OrderSeeder::class
         ]);
     }
 }

@@ -13,8 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('addresses', function (Blueprint $table) {
-            $table->uuid('id')->primary()->default(DB::raw('(UUID())'));
-//            $table->foreignId('id_users');
+            $table->uuid('id')->primary();
+            $table->foreignUuid('user_id')->constrained();
             $table->integer('zip_code');
             $table->string('city','85');
             $table->string('country','50');

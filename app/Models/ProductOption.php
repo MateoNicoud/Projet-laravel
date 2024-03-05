@@ -21,7 +21,7 @@ class ProductOption extends Model
         'weight',
         'stock'
     ];
-    public function promotion(): HasMany
+    public function promotions(): HasMany
     {
         return $this->hasMany(Promotion::class);
 

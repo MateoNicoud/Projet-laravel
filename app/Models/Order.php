@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+
 class Order extends Model
 {
     use HasFactory, HasUuids;
-
+    
     protected $fillable = [
         'reference',
         'total_price',
@@ -23,8 +24,14 @@ class Order extends Model
         'status'
     ];
 
+    public function addresse(): BelongsTo
+    {
+        return $this->belongsTo(Addresse::class);
+    }
+  
     public function orderline(): HasMany
     {
         return $this->hasMany(OrderLine::class);
+
     }
 }

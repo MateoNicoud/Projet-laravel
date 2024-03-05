@@ -11,7 +11,7 @@ class Order extends Model
 {
     use HasFactory, HasUuids;
 
-    public function addresses(): BelongsTo
+    public function addresse(): BelongsTo
     {
         return $this->belongsTo(Addresse::class);
     }

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('product_options', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('product_id');
-            $table->foreignUuid('vat_id');
-            $table->foreignUuid('url_img_id');
+            $table->foreignUuid('product_id')->constrained();
+            $table->foreignUuid('vat_id')->constrained();
+            $table->foreignUuid('url_img_id')->constrained();
             $table->string('option');
             $table->float('price_ht');
             $table->float('price_ttc');

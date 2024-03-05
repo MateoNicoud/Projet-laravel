@@ -16,11 +16,11 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('user_id')->constrained();
             $table->integer('zip_code');
-            $table->string('city','85');
-            $table->string('country','50');
-            $table->string('phone_delivery','20');
-            $table->string('first_name','50');
-            $table->string('last_name','50');
+            $table->string('city',120);
+            $table->string('country',120);
+            $table->string('phone_delivery',20);
+            $table->string('first_name',50);
+            $table->string('last_name',50);
             $table->string('address_delivery');
             $table->timestamps();
         });

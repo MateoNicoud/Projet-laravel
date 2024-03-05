@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\Vat;
 use Illuminate\Database\Seeder;
 
 
@@ -30,7 +31,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProductSeeder::class,
             OrderSeeder::class,
-            CommentSeeder::class
+            CommentSeeder::class,
+            VatSeeder::class
         ]);
     }
 }

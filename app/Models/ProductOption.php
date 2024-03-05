@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ProductOption extends Model
@@ -22,8 +24,16 @@ class ProductOption extends Model
         'weight',
         'stock'
     ];
- public function urlimg(): BelongsTo
- {
-        return $this->belongsTo(UrlImg::class);
- }
+
+   public function urlimg(): BelongsTo
+   {
+          return $this->belongsTo(UrlImg::class);
+   }
+
+    public function promotions(): HasMany
+    {
+        return $this->hasMany(Promotion::class);
+
+    }
+
 }

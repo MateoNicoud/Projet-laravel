@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -50,7 +49,12 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-//    public function credentials(): HasMany {
-//        return $this->hasMany(Credential::class, 'credential_id');
-//    }
+    public function comment(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+  
+    public function credential(): BelongsTo {
+        return $this->BelongsTo(Credential::class);
+    }
 }

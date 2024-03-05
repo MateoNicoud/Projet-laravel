@@ -20,7 +20,7 @@ class Addresse extends Model
         'last_name',
         'address_delivery',
     ];
-    public function order(): HasMany
+    public function orders(): HasMany
     {
         return $this->hasMany(Order::class);
     }

@@ -5,10 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Comment extends Model
 {
     use HasFactory,HasUuids;
 
-    public $timestamps = false;
+
+    protected $fillable = [
+        'id',
+        'content',
+        'score',
+        'created_at',
+        'user_id',
+        'product_id',
+    ];
+
+    public function user(): HasMany
+    {
+        return $this->hasMany(User::class);
+    }
 }

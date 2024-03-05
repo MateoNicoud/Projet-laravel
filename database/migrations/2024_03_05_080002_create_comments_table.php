@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->uuid('id')->primary();
-//            $table->timestamps('updated_at');
             $table->string('content', length: 255);
             $table->integer('score');
-            $table-> timestamp('created_at');
             $table->foreignUuid('user_id')->constrained();
             $table->foreignUuid('product_id')->constrained();
-
+            $table-> timestamps();
         });
     }
 

@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Addresse;
+use App\Models\Address;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -27,7 +27,7 @@ class OrderFactory extends Factory
             'total_weight'=>fake()->numberBetween(1, 1000),
             'delivery_fee'=>fake()->numberBetween(1, 10),
             'status'=>fake()->randomElement(['shipped', 'delivered', 'in preparation']),
-            'addresse_id' => fake()->randomElement(Addresse::pluck('id')),
+            'addresse_id' => fake()->randomElement(Address::pluck('id')),
             'user_id' => fake()->randomElement(User::pluck('id'))
         ];
     }

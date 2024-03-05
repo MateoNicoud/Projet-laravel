@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('url_imgs', function (Blueprint $table) {
-            $table->id();
+            $table->Uuid('id')->primary();
             $table->string('main_img');
             $table->string('back_img');
             $table->string('left_img');

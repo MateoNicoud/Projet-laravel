@@ -26,7 +26,6 @@ class DatabaseSeeder extends Seeder
             CredentialSeeder::class,
             UserSeeder::class,
             VatSeeder::class,
-            PromotionSeeder::class,
             AddresseSeeder::class,
             UrlImgSeeder::class,
             CategorySeeder::class,
@@ -34,7 +33,8 @@ class DatabaseSeeder extends Seeder
             OrderSeeder::class,
             OrderLineSeeder::class,
             CommentSeeder::class,
-            ProductOptionSeeder::class
+            ProductOptionSeeder::class,
+            PromotionSeeder::class
         ]);
     }
 }

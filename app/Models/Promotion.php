@@ -12,6 +12,7 @@ class Promotion extends Model
     protected $fillable = [
         'starting_date',
         'end_date',
-        'value'
+        'value',
+        'product_id'
     ];
 }

@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             CredentialSeeder::class,
             UserSeeder::class,
             VatSeeder::class,
-            AddresseSeeder::class,
+            AddressSeeder::class,
             UrlImgSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,

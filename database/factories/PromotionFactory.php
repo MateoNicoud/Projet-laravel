@@ -23,7 +23,7 @@ class PromotionFactory extends Factory
             'starting_date' =>fake()->dateTime,
             'end_date' =>fake()->dateTime,
             'value' =>fake()->randomElement(['10','20','30','40','50','60','70']),
-            'product_id' =>fake()->randomElement(ProductOption::pluck('id')->toArray())
+            'product_option_id' =>fake()->randomElement(ProductOption::pluck('id')->toArray())
         ];
     }
 }

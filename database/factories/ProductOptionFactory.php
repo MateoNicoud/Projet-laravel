@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Models\UrlImg;
+use App\Models\Vat;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,10 +20,9 @@ class ProductOptionFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_id' => fake()->uuid(),
-            'vat_id' => fake()->uuid(),
-            'promotion_id' => fake()->uuid(),
-            'url_img_id' => fake()->uuid(),
+            'product_id' => fake()->randomElement(Product::pluck('id')),
+            'vat_id' => fake()->randomElement(Vat::pluck('id')),
+            'url_img_id' => fake()->randomElement(UrlImg::pluck('id')),
             'option'=>fake()->word(),
             'price_ht'=>fake()->randomFloat(2, 0, 100),
             'price_ttc'=>fake()->randomFloat(2, 0, 100),

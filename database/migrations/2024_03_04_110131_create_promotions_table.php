@@ -17,6 +17,7 @@ return new class extends Migration
             $table->dateTime('starting_date');
             $table->dateTime('end_date');
             $table->integer('value');
+            $table->foreignUuid('product_id');
             $table->timestamps();
         });
     }

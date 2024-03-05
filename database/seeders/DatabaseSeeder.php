@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CredentialSeeder::class,
             UserSeeder::class,
+            VatSeeder::class,
             PromotionSeeder::class,
             AddresseSeeder::class,
             Url_imgSeeder::class,
@@ -33,7 +34,7 @@ class DatabaseSeeder extends Seeder
             OrderSeeder::class,
             OrderLineSeeder::class,
             CommentSeeder::class,
-            VatSeeder::class
+            ProductOptionSeeder::class
         ]);
     }
 }

@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             Url_imgSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
-            OrderSeeder::class
+            OrderSeeder::class,
+            CommentSeeder::class
         ]);
     }
 }

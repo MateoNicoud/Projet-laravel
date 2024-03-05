@@ -26,6 +26,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('vat');
             $table->integer('value_promotion');
+            $table->timestamps();
         });
     }
 

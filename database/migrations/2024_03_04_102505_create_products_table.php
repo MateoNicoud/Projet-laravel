@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('reference');
             $table->string('slug');
             $table->string('brand');
-            $table->foreignUuid('category_id')->references('id')->on('categories');
+            $table->foreignUuid('category_id')->constrained();
         });
     }
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Url_img>
  */
-class Url_imgFactory extends Factory
+class UrlImgFactory extends Factory
 {
     /**
      * Define the model's default state.

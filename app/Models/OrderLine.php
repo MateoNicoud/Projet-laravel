@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Order_line extends Model
+class OrderLine extends Model
 {
     use HasFactory, HasUuids;
     public $timestamps = false;

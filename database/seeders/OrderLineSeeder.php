@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Order_line;
+use App\Models\OrderLine;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +13,6 @@ class OrderLineSeeder extends Seeder
      */
     public function run(): void
     {
-        Order_line::factory(10)->create();
+        OrderLine::factory(10)->create();
     }
 }

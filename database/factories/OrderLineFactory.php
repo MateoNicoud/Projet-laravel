@@ -8,7 +8,7 @@ use App\Models\Order;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Order_line>
  */
-class Order_lineFactory extends Factory
+class OrderLineFactory extends Factory
 {
     /**
      * Define the model's default state.

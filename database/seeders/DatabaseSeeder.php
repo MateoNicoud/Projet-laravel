@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             VatSeeder::class,
             PromotionSeeder::class,
             AddresseSeeder::class,
-            Url_imgSeeder::class,
+            UrlImgSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
             OrderSeeder::class,

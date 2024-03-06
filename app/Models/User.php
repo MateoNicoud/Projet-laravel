@@ -57,4 +57,9 @@ class User extends Authenticatable
     public function credential(): BelongsTo {
         return $this->BelongsTo(Credential::class);
     }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
 }

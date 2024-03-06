@@ -144,7 +144,7 @@
         <h1>tes</h1>
     </div>
     {{ $categories }}
-    @include('partials.cart')
+    @include('partials.footer')
 @endsection
 
 

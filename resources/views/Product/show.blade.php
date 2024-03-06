@@ -1,8 +1,34 @@
-<div>
-    coucou
 
-    <!-- Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. - Marie Curie -->
+
+<div>
+    slug :{{$product->slug}}
 </div>
+
+{{--Categorie :{{$productOptions->name}}--}}
+<div>
+</div>
+<div>
+    Prix :{{$productOptions[0]->price_ttc}}
+</div>
+<div>
+    Poids :{{$productOptions[0]->weight}}
+</div>
+<div>
+Name :{{$product->name}}
+ </div>
+<div>
+Marque :{{$product->brand}}
+ </div>
+
+
+<div>
+description :{{$product->description}}
+ </div>
+<div>
+reference :{{$product->reference}}
+ </div>
+
+
 
 @php(dd($product,$productOptions,$productCategory,$productComments));
 

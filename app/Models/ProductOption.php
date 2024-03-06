@@ -25,7 +25,7 @@ class ProductOption extends Model
         'stock'
     ];
 
-   public function urlimg(): BelongsTo
+   public function url_img(): BelongsTo
    {
           return $this->belongsTo(UrlImg::class);
    }

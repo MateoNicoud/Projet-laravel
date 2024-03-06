@@ -16,7 +16,7 @@ class Credential extends Model
         'type_permission'
     ];
 
-    public function user(): HasMany{
+    public function users(): HasMany{
         return $this->HasMany(User::class);
     }
 

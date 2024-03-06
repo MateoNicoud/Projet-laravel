@@ -29,7 +29,9 @@ class Order extends Model
         return $this->belongsTo(Addresse::class);
     }
 
-    public function orderline(): HasMany
+
+    public function orderLines(): HasMany
+
     {
         return $this->hasMany(OrderLine::class);
 

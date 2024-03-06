@@ -21,7 +21,7 @@ return new class extends Migration
             $table->float('delivery_fee', 4,2);
             $table->float('total_weight',8,2);
             $table->string('status',20);
-            $table->foreignUuid('addresse_id')->constrained();
+            $table->foreignUuid('address_id')->constrained();
             $table->foreignUuid('user_id')->constrained();
             $table->timestamps();
         });

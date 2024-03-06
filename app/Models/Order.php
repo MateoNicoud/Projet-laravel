@@ -24,9 +24,9 @@ class Order extends Model
         'status'
     ];
 
-    public function addresse(): BelongsTo
+    public function address(): BelongsTo
     {
-        return $this->belongsTo(Addresse::class);
+        return $this->belongsTo(Address::class);
     }
 
 

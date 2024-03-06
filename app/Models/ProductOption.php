@@ -29,6 +29,10 @@ class ProductOption extends Model
    {
           return $this->belongsTo(UrlImg::class);
    }
+    public function product() : BelongsTo
+    {
+        return $this->belongsTo(Product::class);
+    }
 
     public function promotions(): HasMany
     {

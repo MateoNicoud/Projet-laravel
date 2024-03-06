@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Order extends Model
 {
     use HasFactory, HasUuids;
-    
+
     protected $fillable = [
         'reference',
         'total_price',
@@ -28,8 +28,8 @@ class Order extends Model
     {
         return $this->belongsTo(Addresse::class);
     }
-  
-    public function orderline(): HasMany
+
+    public function orderLines(): HasMany
     {
         return $this->hasMany(OrderLine::class);
 

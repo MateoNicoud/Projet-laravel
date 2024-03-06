@@ -19,7 +19,7 @@ class UrlImg extends Model
         'right_img',
         'front_img'
     ];
-    public function product(): HasMany
+    public function products(): HasMany
     {
         return $this->hasMany(ProductOption::class);
     }

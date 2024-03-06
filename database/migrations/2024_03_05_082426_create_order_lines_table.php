@@ -24,7 +24,7 @@ return new class extends Migration
             $table->float('price_vat');
             $table->float('weight');
             $table->integer('quantity');
-            $table->integer('vat');
+            $table->float('vat');
             $table->integer('value_promotion');
             $table->timestamps();
         });

@@ -40,4 +40,9 @@ class ProductOption extends Model
 
     }
 
+    public function vat(): BelongsTo
+    {
+        return   $this->belongsTo(Vat::class );
+    }
+
 }

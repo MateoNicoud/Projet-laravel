@@ -24,7 +24,6 @@ class ProductFactory extends Factory
             'reference' => fake()->text(50),
             'slug' => fake()->slug,
             'brand' => fake()->company(),
-            //'credential_id' => fake()->randomElement(Credential::pluck('id'))
             'category_id' =>fake()->randomElement(Category::pluck('id'))
         ];
     }

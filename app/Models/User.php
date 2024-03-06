@@ -49,12 +49,17 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function comment(): HasMany
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
-  
+
     public function credential(): BelongsTo {
         return $this->BelongsTo(Credential::class);
+    }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
     }
 }

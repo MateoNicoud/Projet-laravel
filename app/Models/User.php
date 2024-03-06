@@ -53,8 +53,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
-  
+
     public function credential(): BelongsTo {
         return $this->BelongsTo(Credential::class);
+    }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
     }
 }

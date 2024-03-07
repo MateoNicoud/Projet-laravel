@@ -18,15 +18,22 @@ class ProductController extends Controller
         $productOptions= (empty($product->productOptions))?'null': $product->productOptions;
         $productCategory= (empty($product->category))?'null': $product->category;
         $productComments= (empty($product->comments))?'null': $product->comments;
-//        $productImg= (empty($product->productOptions->url_img))?'null': $product->productOptions->url_img;
-//dd($productImg);
+        $productImg= (empty($productOptions[0]->url_img))?'null': $productOptions[0]->url_img;
+//        dd($productImg);
+//        $idTest = "9b7fdafb-90ac-443e-a7fd-67c2f04cc2f7";
+//        $product=Product::find($idTest);
+//        $productOptions = $product->productOptions;
+//        $productOptionsForImg = $productOptions[0];
+//        $image = $productOptionsForImg->url_img;
+
+
 
         return view('Product.show', [
             'product' => $product,
             'productOptions'=> $productOptions,
             'productCategory'=>$productCategory,
             'productComments'=>$productComments,
-//            'productImg'=>$productImg
+                'productImg'=>$productImg
 
         ]);
     }

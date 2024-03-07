@@ -1,0 +1,22 @@
+<svg width="55" height="36" viewBox="0 0 55 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="49" height="30" rx="3.5" stroke="black"/>
+<rect y="6" width="50" height="4" fill="black"/>
+<line x1="5" y1="13.5" x2="20" y2="13.5" stroke="black"/>
+<circle cx="7.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="17.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="27.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="37.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="9.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="19.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="29.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="39.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="11.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="21.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="31.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="41.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="13.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="23.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="33.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="43.5" cy="26.5" r="0.5" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M52.8822 27.9498H52.56C52.4637 26.6939 52.004 25.6983 51.319 24.9933C50.5492 24.2009 49.5229 23.8057 48.4999 23.8057C47.4769 23.8057 46.4507 24.2009 45.6808 24.9933C44.9959 25.6983 44.5362 26.6939 44.4399 27.9498H44.1176C43.3978 27.9498 42.8142 28.5333 42.8142 29.2532V31.5722C42.8142 33.5728 44.436 35.1946 46.4366 35.1946H50.5632C52.5638 35.1946 54.1857 33.5728 54.1857 31.5722V29.2532C54.1857 28.5333 53.6021 27.9498 52.8822 27.9498ZM46.3981 25.6901C45.9072 26.1954 45.5357 26.9391 45.4433 27.9498H51.5566C51.4642 26.9391 51.0927 26.1954 50.6018 25.6901C50.0296 25.1011 49.2664 24.8057 48.4999 24.8057C47.7335 24.8057 46.9703 25.1011 46.3981 25.6901Z" fill="black"/>
+</svg>

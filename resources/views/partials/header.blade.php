@@ -47,11 +47,19 @@
                 </button>
             </div>
             <div class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
-                <button type="button" class="flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                    <span class="sr-only">Identifie toi !</span>
-                    <button class="btn">S'identifier</button>
-                </button>
+                @if (Route::has('login'))
+                    <div class="">
+                        @auth
+                            <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                        @else
+                            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
                 <!-- Profile dropdown -->
                 <div class="relative ml-4 flex-shrink-0">
                     <div>
@@ -92,10 +100,20 @@
         </div>
         <hr class="flex justify-center border-solid border-1 border-neutral-300 w-8/12 mx-auto rounded-full my-6">
         <div class="mt-3 space-y-1 px-2">
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">Profil</a>
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">Paramètres</a>
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900">Déconnexion</a>
-            </div>
+            @if (Route::has('login'))
+                <div class="">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </div>
         <hr class="flex justify-center border-solid border-1 border-neutral-300 w-8/12 mx-auto rounded-full my-6">
             <div class="mt-3 flex justify-center" >
                 <a class="w-20 bg-sky-300 rounded-lg" >

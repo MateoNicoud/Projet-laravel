@@ -15,9 +15,11 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
-
-Route::get('/', [HomePageController::class, 'index']);
+Route::get('/home', [HomePageController::class, 'index']);
 
 Route::get('products/{id}',[ProductController::class,'show']);
 

@@ -1,3 +1,7 @@
+@extends('layouts.app')
+@section('content')
+    @include('partials.header')
+
 
 
 
@@ -80,6 +84,8 @@
 </script>
 
 
+    @include('partials.footer')
+@endsection
 {{--@php(dd($product,$productOptions,$productCategory,$productComments));--}}
 
 

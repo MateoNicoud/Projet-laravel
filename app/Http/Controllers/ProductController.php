@@ -19,12 +19,7 @@ class ProductController extends Controller
         $productCategory= (empty($product->category))?'null': $product->category;
         $productComments= (empty($product->comments))?'null': $product->comments;
         $productImg= (empty($productOptions[0]->url_img))?'null': $productOptions[0]->url_img;
-//        dd($productImg);
-//        $idTest = "9b7fdafb-90ac-443e-a7fd-67c2f04cc2f7";
-//        $product=Product::find($idTest);
-//        $productOptions = $product->productOptions;
-//        $productOptionsForImg = $productOptions[0];
-//        $image = $productOptionsForImg->url_img;
+
 
 
 

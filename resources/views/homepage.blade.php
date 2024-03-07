@@ -131,17 +131,20 @@
 {{--        </div>--}}
 {{--    </body>--}}
 {{--</html>--}}
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-</head>
-<body>
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
-<button class="btn btn-primary">Button</button>
-<button class="btn w-64 rounded-full">Button</button>
-</body>
-</html>
+
+
+@extends('layouts.app')
+@section('content')
+    @include('partials.header')
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+    </h1>
+    <button class="btn btn-neutral">Neutral</button>
+    <div class="min-h-lvh">
+        <h1>tes</h1>
+    </div>
+    {{ $categories }}
+    @include('partials.footer')
+@endsection
+
+

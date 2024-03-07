@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
@@ -14,9 +15,10 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-//Route::resource('products',ProductController::class)
-//    ->only(['index']);
+
+
+Route::get('/', [HomePageController::class, 'index']);
+
 Route::get('products/{id}',[ProductController::class,'show']);
+
+

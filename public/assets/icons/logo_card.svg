@@ -1,0 +1,21 @@
+<svg width="50" height="31" viewBox="0 0 50 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="49" height="30" rx="3.5" stroke="black"/>
+<rect y="6" width="50" height="4" fill="black"/>
+<line x1="5" y1="13.5" x2="20" y2="13.5" stroke="black"/>
+<circle cx="7.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="17.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="27.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="37.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="9.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="19.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="29.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="39.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="11.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="21.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="31.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="41.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="13.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="23.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="33.5" cy="26.5" r="0.5" fill="black"/>
+<circle cx="43.5" cy="26.5" r="0.5" fill="black"/>
+</svg>

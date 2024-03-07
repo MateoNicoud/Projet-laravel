@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', [HomePageController::class, 'index']);
+
+Route::get('products/{id}',[ProductController::class,'show']);
+
+

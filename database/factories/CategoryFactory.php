@@ -16,8 +16,30 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
+        static $imageIndex = 0;
+        // Chemin vers votre répertoire d'images
+        $imagesDirectory = '/assets/img/';
+        $imagesFiles = [
+            'image1.webp',
+            'image2.webp',
+            'image3.webp',
+            'image4.webp',
+            'image5.webp',
+            'image6.webp',
+            'image7.webp',
+            'image8.webp',
+            'image9.webp',
+            'image10.webp',
+        ];
+        $imagePath = $imagesDirectory.$imagesFiles[$imageIndex];
+        $imageIndex++;
+        // Réinitialiser l'index si on atteint la fin de la liste des fichiers
+        if ($imageIndex >= count($imagesFiles)) {
+            $imageIndex = 0;
+        }
         return [
             'name' => fake()->name(),
+            'img' => $imagePath,
             'slug' => fake()->slug(2)
         ];
     }

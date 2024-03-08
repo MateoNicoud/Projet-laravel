@@ -11,6 +11,12 @@ use function PHPUnit\Framework\isEmpty;
 
 class HomePageController extends Controller
 {
+    public function index(){
+        $categories = Category::select('name', 'img')->get();
+        return view("homePage",
+        [
+            'categories' => $categories,
+        ]);
     public function index()
     {
 

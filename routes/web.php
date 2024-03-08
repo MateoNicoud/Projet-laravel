@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 Route::get('/home', [HomePageController::class, 'index'])->name('homepage');
 Route::get('/search', [SearchController::class, 'getProducts']);
-Route::get('products/{id}',[ProductController::class,'show']);
+Route::get('/products/{id}',[ProductController::class,'show']);
 
 Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('addToCart');
 

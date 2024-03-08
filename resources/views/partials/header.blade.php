@@ -13,7 +13,7 @@ $categories = \App\Models\Category::all();
             </div>
             <div class="relative z-0 flex flex-1 items-center justify-center px-2 sm:absolute sm:inset-0">
                 <div class="w-full sm:max-w-xs">
-                    <form method="get" action="/search">
+                    <form method="get" action="search">
                         <label for="search" class="sr-only">Search</label>
                         <div class="relative">
                             <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">

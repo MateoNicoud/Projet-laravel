@@ -21,6 +21,10 @@ class Product extends Model
         'brand',
     ];
 
+    public static function find(mixed $request)
+    {
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

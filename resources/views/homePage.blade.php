@@ -1,15 +1,6 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    <style>
-        .image-full::before {
-            display: none !important;
-        }
-    </style>
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
+    @include('partials.header')
 <h1 class="text-3xl font-bold underline">
 </h1>
 <div class="flex justify-center">
@@ -41,7 +32,7 @@
         @for($item=0;$item<2;$item++)
             {{--    @foreach($categories as $item)--}}
             <!--{{$categories[$item]->name}} -->
-            <a href="http://last_man.local/">
+            <a href="http://last_man.local/{{$categories[$item]->slug}}">
                 <div class="card max-w-max bg-base-100 shadow-none image-full rounded-none">
                     <figure>
                         <img src="{{$categories[$item]->img}}" alt="liens vers couteaux/haches"/>
@@ -63,7 +54,7 @@
         @for($item=2;$item<5;$item++)
             {{--    @foreach($categories as $item)--}}
             <!--{{$categories[$item]->name}} -->
-            <a href="http://last_man.local/">
+            <a href="http://last_man.local/{{$categories[$item]->slug}}">
                 <div class="card max-w-max bg-base-100 shadow-none image-full rounded-none">
                     <figure>
                         <img src="{{$categories[$item]->img}}" alt="liens vers couteaux/haches"/>
@@ -166,7 +157,7 @@
         @for($item=5;$item<8;$item++)
             {{--    @foreach($categories as $item)--}}
             <!--{{$categories[$item]->name}} -->
-            <a href="http://last_man.local/">
+            <a href="http://last_man.local/{{$categories[$item]->slug}}">
                 <div class="card max-w-max bg-base-100 shadow-none image-full rounded-none">
                     <figure>
                         <img src="{{$categories[$item]->img}}" alt="liens vers couteaux/haches"/>
@@ -188,7 +179,7 @@
         @for($item=8;$item<10;$item++)
             {{--    @foreach($categories as $item)--}}
             <!--{{$categories[$item]->name}} -->
-            <a href="http://last_man.local/">
+            <a href="http://last_man.local/{{$categories[$item]->slug}}">
                 <div class="card max-w-max bg-base-100 shadow-none image-full rounded-none">
                     <figure>
                         <img src="{{$categories[$item]->img}}" alt="liens vers couteaux/haches"/>
@@ -208,7 +199,8 @@
     </div>
 </div>
 
-</body>
-</html>
+
+    @include('partials.footer')
+@endsection
 
 

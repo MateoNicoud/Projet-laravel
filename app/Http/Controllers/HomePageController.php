@@ -11,13 +11,23 @@ use function PHPUnit\Framework\isEmpty;
 
 class HomePageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
 
 
         $products = Product::limit(15)->get();
 
         $arrayForProductionOption = [];
+
+        session(["test" => "it's yes"]);
+
+        $nbreProduct = 0;
+        if ($request->session()->get('cart')){
+            $cart =  $request->session()->get('cart');
+            foreach ($cart as $key => $product){
+                $nbreProduct += $product;
+            }
+        }
 
         foreach ($products as $product){
 
@@ -30,7 +40,7 @@ class HomePageController extends Controller
 
         }
 
-        return view('homepage', ['productionOption' => $arrayForProductionOption]);
+        return view('homepage', ['productionOption' => $arrayForProductionOption, 'nbreProduct' => $nbreProduct]);
 
     }
 }

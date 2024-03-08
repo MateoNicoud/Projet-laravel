@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -22,6 +23,8 @@ Route::get('/', function () {
 Route::get('/home', [HomePageController::class, 'index']);
 
 Route::get('products/{id}',[ProductController::class,'show']);
+
+Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('addToCart');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

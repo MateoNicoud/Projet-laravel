@@ -42,7 +42,7 @@ class HomePageController extends Controller
         }
 
 
-        return view('homepage', ['productionOption' => $arrayForProductionOption, 'nbreProduct' => $nbreProduct, 'categories' => $categories]);
+        return view('homePage', ['productionOption' => $arrayForProductionOption, 'nbreProduct' => $nbreProduct, 'categories' => $categories]);
 
 
     }

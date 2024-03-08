@@ -4,6 +4,7 @@ use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomePageController::class, 'index']);
 
 Route::get('products/{id}',[ProductController::class,'show']);
+Route::get('test',[TestController::class,'index']);
 
 Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('addToCart');
 

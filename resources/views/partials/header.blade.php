@@ -65,7 +65,7 @@
                     <div>
                         <button type="button" class="relative flex bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                             <span class="sr-only">Ouvre ton panier</span>
-                            @if($nbreProduct)
+                            @if(isset($nbreProduct))
                                 <span class="absolute text-xs text-white -top-2 -right-2 px-2 py-1 bg-red-600 rounded-full">{{$nbreProduct}}</span>
                             @endif
                             <img class="h-8 w-8 " src="{{asset('assets/icons/logo_cart.svg')}}" alt="">

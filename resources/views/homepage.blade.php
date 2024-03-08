@@ -21,7 +21,16 @@
             <div class="px-6 pt-4 pb-2">
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{$product->price_ttc}} €</span>
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                <button class="btn">Ajouter au panier</button>
+{{--                <form method="post" action="/addToCart">--}}
+{{--                    @csrf--}}
+{{--                    <input class="btn" name="qte_product" value="{{1}}" type="submit" />--}}
+{{--                </form>--}}
+                <form method="post" action="{{route('addToCart', $product->id)}}">
+                    @csrf
+                    <input type="number" name="qte_product" value="1">
+                    <input type="Submit" name="btn_order" value="Commander" class="btn"/>
+                    <input type="Submit" name="btn_cart" value="Ajouter au panier" class="btn"/>
+                </form>
             </div>
         </div>
     @endforeach

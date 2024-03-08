@@ -11,7 +11,8 @@ class Category extends Model
 {
     use HasFactory,HasUuids;
     protected $fillable =[
-      'name'
+        'name',
+        'img'
     ];
     public function products(): HasMany
     {

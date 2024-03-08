@@ -12,8 +12,9 @@ use function PHPUnit\Framework\isEmpty;
 class HomePageController extends Controller
 {
     public function index(Request $request)
-    {
 
+    {
+        $categories = Category::select('name', 'img','slug')->get();
 
         $products = Product::limit(15)->get();
 
@@ -40,7 +41,9 @@ class HomePageController extends Controller
 
         }
 
-        return view('homepage', ['productionOption' => $arrayForProductionOption, 'nbreProduct' => $nbreProduct]);
+
+        return view('homepage', ['productionOption' => $arrayForProductionOption, 'nbreProduct' => $nbreProduct, 'categories' => $categories]);
+
 
     }
 }

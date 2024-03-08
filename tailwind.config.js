@@ -11,13 +11,16 @@ export default {
         "./resources/**/*.vue",
     ],
 
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+  theme: {
+    extend: {
+        fontFamily: {
+            sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+        },
+        spacing: {
+            '11': '40px',
         },
     },
+  },
 
     plugins: [
         forms,

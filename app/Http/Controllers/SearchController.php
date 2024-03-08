@@ -27,6 +27,7 @@ class SearchController extends Controller
             echo $e->getMessage();
         }
         if ($product) {
+            dd($product);
             return redirect('/results');
         }
     }

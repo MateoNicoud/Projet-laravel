@@ -79,6 +79,7 @@ class ProductController extends Controller
             'nbreProduct' => $nbreProduct
 
 
+
         ]);
     }
 }

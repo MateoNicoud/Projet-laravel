@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    @include('partials.header')
     <nav class="bg-gray-800 text-white mx-auto">
         <div class="flex justify-between">
             <div class="flex">

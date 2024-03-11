@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -17,17 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});
 Route::get('/', [HomePageController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', [HomePageController::class, 'index'])->name('homepage');
+Route::get('products/{id}',[ProductController::class,'show']);
+Route::get('/products/{categoryId}', [ProductController::class,'index']);
+
+//Route::get('/home', [HomePageController::class, 'index'])->name('homepage');
 Route::get('/search', [SearchController::class, 'getProducts']);
-Route::get('/products/{id}',[ProductController::class,'show']);
+
+
 
 Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('addToCart');
 

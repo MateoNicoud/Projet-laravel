@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Product extends Model
 {
@@ -19,6 +20,10 @@ class Product extends Model
         'slug',
         'brand',
     ];
+
+    public static function find(mixed $request)
+    {
+    }
 
     public function category(): BelongsTo
     {
@@ -34,4 +39,16 @@ class Product extends Model
         return $this->hasMany(ProductOption::class);
     }
 
+//    public function test(): HasOneThrough
+//    {
+//        return $this->hasOneThrough(
+//            UrlImg::class,
+//            ProductOption::class,
+//            product_id,
+//
+//
+//
+//        );
+//    }
 }
+

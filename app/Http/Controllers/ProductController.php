@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -34,16 +35,20 @@ class ProductController extends Controller
         ]);
     }
 
-    public
-    function show(string $id): view
+  
+    public function show(Request $request, string $id): view
     {
 
         // $idtest = 9b7fddae-bb74-4b84-b226-f3f69cd4f454
+
+        $value = $request->session()->get('test');
+        echo $value;
         $product = Product::find($id);
-        $productOptions = (empty($product->productOptions)) ? 'null' : $product->productOptions;
-        $productCategory = (empty($product->category)) ? 'null' : $product->category;
-        $productComments = (empty($product->comments)) ? 'null' : $product->comments;
-        $productImg = (empty($productOptions[0]->url_img)) ? 'null' : $productOptions[0]->url_img;
+        $productOptions= (empty($product->productOptions))?'null': $product->productOptions;
+        $productCategory= (empty($product->category))?'null': $product->category;
+        $productComments= (empty($product->comments))?'null': $product->comments;
+        $productImg= (empty($productOptions[0]->url_img))?'null': $productOptions[0]->url_img;
+
 
 
 
@@ -54,6 +59,7 @@ class ProductController extends Controller
             'productCategory' => $productCategory,
             'productComments' => $productComments,
             'productImg' => $productImg
+
 
         ]);
     }

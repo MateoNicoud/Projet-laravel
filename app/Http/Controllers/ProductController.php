@@ -33,7 +33,7 @@ class ProductController extends Controller
             'productOptions'=> $productOptions,
             'productCategory'=>$productCategory,
             'productComments'=>$productComments,
-                'productImg'=>$productImg
+            'productImg'=>$productImg
 
         ]);
     }

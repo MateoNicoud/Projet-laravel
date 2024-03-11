@@ -15,7 +15,7 @@ class AddProductController extends Controller
 
         if (!$request->session()->get('cart')){
             $cart = $request->session()->get('cart',[]);
-            $cart[$id] = $qte;
+            $cart[$id] = (int)$qte;
             $request->session()->put('cart', $cart);
 
         }else{
@@ -25,13 +25,13 @@ class AddProductController extends Controller
                 foreach ($cart as $key => $product){
                     if ($key === $id){
                         $cart = $request->session()->get('cart',[]);
-                        $cart[$id] = $product + $qte;
+                        $cart[$id] = $product + (int)$qte;
                         $request->session()->put('cart', $cart);
                     }
                 }
             }else{
                 $cart = $request->session()->get('cart',[]);
-                $cart[$id] = $qte;
+                $cart[$id] = (int)$qte;
                 $request->session()->put('cart', $cart);
             }
 
@@ -40,7 +40,7 @@ class AddProductController extends Controller
         if ($type_request === "Commander"){
             return redirect('/cart');
         }else{
-            return redirect('/home');
+            return back();
         }
     }
 }

@@ -55,11 +55,10 @@ class ProductController extends Controller
 
         return view('Product.show', [
             'product' => $product,
-            'productOptions' => $productOptions,
-            'productCategory' => $productCategory,
-            'productComments' => $productComments,
-            'productImg' => $productImg
-
+            'productOptions'=> $productOptions,
+            'productCategory'=>$productCategory,
+            'productComments'=>$productComments,
+            'productImg'=>$productImg
 
         ]);
     }

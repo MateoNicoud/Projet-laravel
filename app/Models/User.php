@@ -22,11 +22,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'first_name',
-        'last_name',
+        'name',
         'pseudo',
         'phone',
         'email',
         'password',
+        'credential_id'
     ];
 
     /**
@@ -48,6 +49,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
 
     public function comments(): HasMany
     {

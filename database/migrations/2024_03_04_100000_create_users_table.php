@@ -17,10 +17,10 @@ return new class extends Migration
 
             //$table->foreignUuid('credential_id')->constrained();
             $table->foreignUuid('credential_id')->constrained();
-            $table->string('first_name', 50);
-            $table->string('last_name',50);
-            $table->string('pseudo', 50);
-            $table->string('phone', 20);
+            $table->string('first_name')->nullable();
+            $table->string('name')->nullable();
+            $table->string('pseudo')->nullable();
+            $table->string('phone')->nullable();
             $table->string('email');
             $table->timestamp('email_verified_at');
             $table->string('password');

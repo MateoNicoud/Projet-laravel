@@ -2,6 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
+            {{ \Illuminate\Support\Facades\Auth::user()->name }}
         </h2>
     </x-slot>
 
@@ -12,6 +13,7 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
-        </div>
+        </div>*
     </div>
+    <h1>test</h1>
 </x-app-layout>

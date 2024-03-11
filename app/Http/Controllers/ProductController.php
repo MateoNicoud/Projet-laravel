@@ -48,7 +48,9 @@ class ProductController extends Controller
     public function show(Request $request): view
     {
 
+      
         $product = Product::where('id', '=', $request->id)->get()[0];
+
 
         $productOptions= (empty($product->productOptions))?'null': $product->productOptions;
 

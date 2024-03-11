@@ -61,6 +61,7 @@
                 </div>
 
                 description :{{empty($product->description)? 'pas de référence': $product->description}}
+
                 <div>
                     <button
                         class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
@@ -80,6 +81,7 @@
                 const priceProduct = document.getElementById('priceProduct');
                 const weightProduct = document.getElementById('weightProduct');
                 const arrayProduct = <?php echo json_encode(empty($productOptions) ? 'null' : $productOptions); ?>;
+
                 select.addEventListener('input', (e) => {
                     selectValue = e.target.value;
                     for (let i = 0; i < arrayProduct.length; i++) {

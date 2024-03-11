@@ -96,12 +96,12 @@ $categories = \App\Models\Category::all();
                             </div>
                         </div>
                         <div class="mt-6 flex justify-center">
-                            {{--                            <form method="post" action="{{route('addToCart', [$product->id, 'order'])}}">--}}
-                            {{--                                @csrf--}}
-                            {{--                                <input type="hidden" name="qte_product" value="1">--}}
+                                                        <form method="post" action="{{route('addToCart', [$product->id, 'order'])}}">
+                                                            @csrf
+                                                            <input type="hidden" name="qte_product" value="1">
                             <input type="Submit" name="btn_cart" value="Ajouter au panier"
                                    class="relative flex items-center justify-center rounded-md border-2 border-black bg-white px-8 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white hover:cursor-pointer">
-                            {{--                            </form>--}}
+                                                        </form>
                             {{--                            <input class="relative flex items-center justify-center rounded-md border-2 border-black bg-white px-8 py-2 text-sm font-medium text-gray-900 hover:bg-black hover:text-white hover:cursor-pointer" type="submit" value="Ajouter au panier">--}}
                         </div>
                     </div>

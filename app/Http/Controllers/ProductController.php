@@ -49,10 +49,7 @@ class ProductController extends Controller
     {
 
         // $idtest = 9b7fddae-bb74-4b84-b226-f3f69cd4f454
-
-        $value = $request->session()->get('test');
-        echo $value;
-        $product = Product::find($id);
+        $product = Product::where('id', '=', $id)->get()[0];
         $productOptions= (empty($product->productOptions))?'null': $product->productOptions;
         $productCategory= (empty($product->category))?'null': $product->category;
         $productComments= (empty($product->comments))?'null': $product->comments;
@@ -77,9 +74,6 @@ class ProductController extends Controller
             'productComments' => $productComments,
             'productImg' => $productImg,
             'nbreProduct' => $nbreProduct
-
-
-
         ]);
     }
 }

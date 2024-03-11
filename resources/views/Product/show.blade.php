@@ -12,40 +12,41 @@
 
             <div class="h-96 carousel carousel-vertical rounded">
                 <div class="carousel-item h-full">
-                    <img src="{{isset($productImg->main_img)}}" class="w-full" alt="Tailwind CSS Carousel component"/>
+                    <img src="{{empty($productImg->main_img)?'https://placehold.co/300' : $productImg->main_img}}" class="w-full" alt="Tailwind CSS Carousel component"/>
                 </div>
                 <div class="carousel-item w-full">
-                    <img src="{{isset($productImg->front_img)}}" class="w-full" alt="Tailwind CSS Carousel component"/>
+                    <img src="{{empty($productImg->front_img)?'https://placehold.co/300' : $productImg->front_img}}" class="w-full" alt="Tailwind CSS Carousel component"/>
                 </div>
                 <div class="carousel-item w-full">
-                    <img src="{{isset($productImg->left_img)}}" class="w-full" alt="Tailwind CSS Carousel component"/>
+                    <img src="{{empty($productImg->left_img)?'https://placehold.co/300' : $productImg->left_img}}" class="w-full" alt="Tailwind CSS Carousel component"/>
                 </div>
                 <div class="carousel-item w-full">
-                    <img src="{{isset($productImg->right_img)}}" class="w-full" alt="Tailwind CSS Carousel component"/>
+                    <img src="{{empty($productImg->right_img)?'https://placehold.co/300' : $productImg->right_img}}" class="w-full" alt="Tailwind CSS Carousel component"/>
                 </div>
                 <div class="carousel-item w-full">
-                    <img src="{{isset($productImg->back_img)}}" class="w-full" alt="Tailwind CSS Carousel component"/>
+                    <img src="{{empty($productImg->back_img)?'https://placehold.co/300' : $productImg->back_img}}" class="w-full" alt="Tailwind CSS Carousel component"/>
                 </div>
             </div>
         </div>
 
         <div class="flex-auto w-32">
             <div>
-                Name :{{isset($product->name)}}
+                Name :{{empty($product->name)? 'pas de référence': $product->name}}
             </div>
             <div>
-                Marque :{{isset($product->brand)}}
+                Marque :{{empty($product->brand)? 'pas de référence': $product->brand}}
             </div>
             <div>
-                reference :{{isset($product->reference)}}
+                reference :{{empty($product->reference)? 'pas de référence': $product->reference}}
             </div>
             <div>
+
                 <select name="option" id="selector">
                     <option>-- Selectionnez votre option --</option>
-                    @if(isset($productOptions))
+                    @if(empty($productOptions[0])? 'pas de référence': $productOptions[0])
                         @foreach($productOptions as $productOption)
-                            <option value="{{ isset($productOption->option ) }}">
-                                {{ isset($productOption->option) }}
+                            <option value="{{ $productOption->option  }}">
+                                {{ $productOption->option }}
                             </option>
                         @endforeach
                     @endif
@@ -59,7 +60,7 @@
                     Poids option: <span id="weightProduct"></span>
                 </div>
 
-                description :{{isset($product->description)}}
+                description :{{empty($product->description)? 'pas de référence': $product->description}}
                 <div>
                     <button
                         class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
@@ -78,8 +79,7 @@
                 const select = document.getElementById('selector');
                 const priceProduct = document.getElementById('priceProduct');
                 const weightProduct = document.getElementById('weightProduct');
-                const arrayProduct = <?php echo json_encode(isset($productOptions)); ?>;
-                console.log(arrayProduct)
+                const arrayProduct = <?php echo json_encode(empty($productOptions) ? 'null' : $productOptions); ?>;
                 select.addEventListener('input', (e) => {
                     selectValue = e.target.value;
                     for (let i = 0; i < arrayProduct.length; i++) {

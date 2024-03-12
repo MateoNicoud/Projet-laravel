@@ -26,6 +26,7 @@ Route::get('/', [HomePageController::class, 'index']);
 
 Route::get('/products/{id}',[ProductController::class,'show']);
 Route::get('/catalog/{slug}', [ProductController::class,'index']);
+
 Route::get('/search', [SearchController::class, 'getProducts']);
 
 

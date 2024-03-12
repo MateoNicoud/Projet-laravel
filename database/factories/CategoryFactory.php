@@ -43,7 +43,20 @@ class CategoryFactory extends Factory
             'VÊTEMENT',
             'REPAS / ACCESSOIRES REPAS'
         ];
+        $slugsName = [
+            'couteaux-haches',
+            'sac-et-transport',
+            'tente',
+            'orientation',
+            'couchage',
+            'secours-soin',
+            'feu',
+            'montre',
+            'vetement',
+            'repas-accesoires-repas'
+        ];
         $categoryName = $categoriesName[$imageIndex];
+        $slugName = $slugsName[$imageIndex];
         $imagePath = $imagesDirectory.$imagesFiles[$imageIndex];
         $imageIndex++;
         // Réinitialiser l'index si on atteint la fin de la liste des fichiers
@@ -53,7 +66,7 @@ class CategoryFactory extends Factory
         return [
             'name' => $categoryName,
             'img' => $imagePath,
-            'slug' => fake()->slug(2)
+            'slug' => $slugName
         ];
     }
 }

@@ -19,16 +19,18 @@ class ProductOptionFactory extends Factory
      */
     public function definition(): array
     {
+        $productId = fake()->randomElement(Product::pluck('id'));
         return [
-            'product_id' => fake()->randomElement(Product::pluck('id')),
+            'product_id' => $productId,
             'vat_id' => fake()->randomElement(Vat::pluck('id')),
             'url_img_id' => fake()->randomElement(UrlImg::pluck('id')),
-            'option'=>fake()->word(),
-            'price_ht'=>fake()->randomFloat(2, 0, 100),
-            'price_ttc'=>fake()->randomFloat(2, 0, 100),
-            'price_vat'=>fake()->randomFloat(2, 0, 100),
-            'weight'=>fake()->randomFloat(2, 0, 100),
-            'stock'=>fake()->randomNumber(1)
+            'option' => fake()->word(),
+            'price_ht' => fake()->randomFloat(2, 0, 100),
+            'price_ttc' => fake()->randomFloat(2, 0, 100),
+            'price_vat' => fake()->randomFloat(2, 0, 100),
+            'weight' => fake()->randomFloat(2, 0, 100),
+            'stock' => fake()->randomNumber(1)
         ];
     }
+
 }

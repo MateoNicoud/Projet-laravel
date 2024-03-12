@@ -8,7 +8,7 @@
             <div class="card max-w-max image-full ">
 
                 <figure>
-                    <img src="./assets/img/romain-gal-f5KkNedSydo-unsplash 2.webp" alt="liens vers l'article tendance"/>
+                    <img src="./assets/img/romain-gal-f5KkNedSydo-unsplash 2.webp" alt="lien vers l'article tendance"/>
                 </figure>
 
                 <div class="card-body">

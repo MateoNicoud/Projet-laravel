@@ -17,9 +17,11 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
+
         $category = Category::where('slug', '=', $request->slug)->first()->load('products', 'products.productOptions');
 
         foreach ($category->products as $product) {
+
                 $minimumPrices[$product->id] = $product->productOptions->min('price_ttc');
         }
 
@@ -32,34 +34,42 @@ class ProductController extends Controller
         }
 
         return view('catalog', [
+
             'categoryProducts' => $category->products,
             'categoryName' => $category->name,
+
             'minimumPrices' => $minimumPrices,
             'nbreProduct' => $nbreProduct
         ]);
     }
 
 
-    public function show(Request $request, string $id): view
+
+    public function show(Request $request): view
     {
 
-        // $idtest = 9b7fddae-bb74-4b84-b226-f3f69cd4f454
-        $product = Product::where('id', '=', $id)->get()[0];
+      
+        $product = Product::where('id', '=', $request->id)->get()[0];
+
+
         $productOptions= (empty($product->productOptions))?'null': $product->productOptions;
+
+
         $productCategory= (empty($product->category))?'null': $product->category;
         $productComments= (empty($product->comments))?'null': $product->comments;
         $productImg= (empty($productOptions[0]->url_img))?'null': $productOptions[0]->url_img;
-
+//        dd($product->name);
 
         $nbreProduct = 0;
         if ($request->session()->get('cart')){
             $cart =  $request->session()->get('cart');
-            foreach ($cart as $key => $product){
-                $nbreProduct += $product;
+            foreach ($cart as $key => $cartProduct){
+                $nbreProduct += $cartProduct;
             }
         }
+//        dd($product);
 
-
+//        dd($productImg->main_img);
 
 
         return view('Product.show', [

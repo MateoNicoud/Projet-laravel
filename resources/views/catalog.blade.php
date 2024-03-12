@@ -3,20 +3,11 @@
     @include('partials.header')
 
 
-    <?php
-    $categories = \App\Models\Category::all();
-    ?>
     <div class="flex mt-10 justify-center">
     <div class="card image-full min-h-[650px]">
-<?php $i=0; ?>
-@while($i < 10)
-    @if($categories[$i]->slug == $category->slug)
-<?php $a = $i ; ?>
-    @endif
-    <?php $i++; ?>
-@endwhile
+
         <figure>
-        <img src="{{$categories[$a]->img}}" alt="photo représentant la catégorie" class="min-h-fit" >
+        <img src="{{$categories[$numbercategory]->img}}" alt="photo représentant la catégorie" class="min-h-fit" >
         </figure>
     </div>
 

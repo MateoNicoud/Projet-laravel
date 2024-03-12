@@ -14,14 +14,11 @@ use App\Models\ProductOption;
 class ProductController extends Controller
 {
 
-    public function index(string $slug, Request $request)
+    public function index(Request $request)
     {
-
-        $id = Category::where('slug', '=', $slug)->get();
-//        dd($request->all());
+        $id = Category::where('slug', '=', $request->slug)->get();
         $categoryProducts = Product::with('productOptions:id,price_ttc,product_id')->where('category_id', '=', $id[0]['id'])->get();
-        $categoryName = Category::where('slug', '=', $slug)->get();
-
+        $category = Category::select('name','img','slug')->where('slug', '=', $request->slug)->get();
 
 
         foreach ($categoryProducts as $product) {
@@ -38,11 +35,26 @@ class ProductController extends Controller
 
         return view('catalog', [
             'categoryProducts' => $categoryProducts,
-            'categoryName' => $categoryName[0],
+            'category' => $category[0],
             'minimumPrices' => $minimumPrices,
             'nbreProduct' => $nbreProduct
         ]);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public function show(Request $request, string $id): view

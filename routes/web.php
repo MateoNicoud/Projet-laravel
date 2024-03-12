@@ -36,8 +36,8 @@ Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('a
 Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('addToCart');
 
 Route::get('/cart',[CartController::class,'index'])->name('cart');
-Route::put('/cart',[CartController::class,'update'])->name('updateCart');
-Route::delete('/cart',[CartController::class,'destroy'])->name('destroyCart');
+Route::get('/updateCart',[CartController::class,'update'])->name('updateCart');
+Route::get('/destroyCart',[CartController::class,'destroy'])->name('destroyCart');
 Route::post('/cart',[CartController::class,'store'])->name('storeCart');
 
 

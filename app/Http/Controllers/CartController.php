@@ -14,6 +14,7 @@ class CartController extends Controller
     public function index(Request $request)
     {
         //
+        dd($request);
 
         $cart = $request->session()->get('cart');
         $viewedCart = [];
@@ -64,9 +65,9 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-
+        dd($request);
     }
 
     /**
@@ -74,6 +75,13 @@ class CartController extends Controller
      */
     public function destroy(Request $request)
     {
-        dd($request);
+        $cart = $request->session()->get('cart');
+
+        $idForDeleting = $request->input('product');
+        unset($cart[$idForDeleting]);
+        $request->session()->put('cart', $cart);
+
+        return back();
+
     }
 }

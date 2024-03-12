@@ -48,26 +48,23 @@
                                             <p class="mt-1 text-sm font-medium text-gray-900">{{$product->price_ttc}}
                                                 €</p>
                                         </div>
-                                        <form method="post" action="{{route('cart')}}">
+                                        <form method="get" id="formValue" action="{{route('updateCart')}}">
                                             @csrf
                                             <div class="mt-4 sm:mt-0 sm:pr-9">
                                                 <label for="quantity-0" class="sr-only">Quantity, Basic Tee</label>
-                                                <select id="quantity-0" name="quantity-{{$product->id}}"
+                                                <select id="{{$product->id}}" class="selector" name="{{$product->id}}"
                                                         class="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
+                                                    @for($i = 1; $i <= 10; $i++)
+                                                        <option  value="{{$i}}">{{$i}}</option>
+                                                    @endfor
                                                 </select>
+                                                <button type="submit">Mettre à jour</button>
                                             </div>
                                         </form>
                                         <div class="absolute right-0 top-0">
-                                            <form method="post" action="{{route('destroyCart')}}">
+                                            <form method="get" action="{{route('destroyCart')}}">
                                                 @csrf
+                                                <input type="hidden" name="product" value="{{$product->id}}">
                                                 <button type="submit"
                                                         class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
                                                     <span class="sr-only">Remove</span>
@@ -91,7 +88,6 @@
                                     </svg>
                                     <span>In stock</span>
                                 </p>
-        </div>
         </li>
         @endforeach
         </ul>
@@ -153,3 +149,19 @@
     </div>
 
 @endsection
+
+{{--<script>--}}
+{{--    document.addEventListener('DOMContentLoaded', (e) => {--}}
+{{--        let select = document.getElementsByClassName('selector')--}}
+{{--        const formValue = document.getElementById('formValue')--}}
+
+{{--        for( i = 0; i< select.length; i++){--}}
+{{--            select[i].addEventListener('input', (e) => {--}}
+{{--                console.log(e.target.id)--}}
+{{--                console.log(e.target.value)--}}
+{{--                formValue.submit()--}}
+{{--            })--}}
+{{--        }--}}
+
+{{--    })--}}
+{{--</script>--}}

@@ -43,9 +43,8 @@ while($i < 10) {
                 $nbreProduct += $product;
             }
         }
-
+        //dd($category->products);
         return view('catalog', [
-
             'categoryProducts' => $category->products,
             'categoryName' => $category->name,
             'minimumPrices' => $minimumPrices,

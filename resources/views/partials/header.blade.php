@@ -77,9 +77,10 @@
                 <!-- Profile dropdown -->
                 <div class="relative ml-4 flex-shrink-0">
                     <div>
+                        <a href="{{route('cart')}}">
                         <button type="button"
                                 class="relative flex bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                id="user-menu-button" aria-expanded="false" aria-haspopup="true"  >
                             <span class="sr-only">Ouvre ton panier</span>
                             @if(isset($nbreProduct))
                                 @if($nbreProduct > 99)
@@ -92,6 +93,7 @@
                             @endif
                             <img class="h-8 w-8 " src="{{asset('assets/icons/logo_cart.svg')}}" alt="">
                         </button>
+                        </a>
                     </div>
 
                     <!--

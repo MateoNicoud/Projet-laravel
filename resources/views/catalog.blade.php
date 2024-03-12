@@ -125,7 +125,7 @@
 
                             </a>
                             <div class="mt-6 flex justify-center">
-                                <form method="post" action="{{route('addToCart', [$product->id, 'order'])}}">
+                                <form method="post" action="{{route('addToCart', [$product->productOptions[0]->id, 'order'])}}">
                                     @csrf
                                     <input type="hidden" name="qte_product" value="1">
                                     <input type="Submit" name="btn_cart" value="Ajouter au panier"

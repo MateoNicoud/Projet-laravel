@@ -49,4 +49,9 @@ class ProductOption extends Model
         return   $this->belongsTo(Vat::class );
     }
 
+    public function getWeightAttribute($value)
+    {
+        return number_format($value/10,1,','," ").' kg';
+    }
+
 }

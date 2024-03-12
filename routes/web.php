@@ -31,8 +31,7 @@ Route::get('/catalog/{slug}', [ProductController::class,'index']);
 Route::get('/search', [SearchController::class, 'getProducts']);
 
 
-//TODO: passer les prapametres avec les bon name
-Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('addToCart');
+
 Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('addToCart');
 
 Route::get('/cart',[CartController::class,'index'])->name('cart');

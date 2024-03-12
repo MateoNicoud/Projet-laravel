@@ -89,6 +89,9 @@
                                     </svg>
                                     <span>In stock</span>
                                 </p>
+
+        </div>
+
         </li>
         @endforeach
         </ul>

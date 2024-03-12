@@ -43,43 +43,31 @@ class ProductController extends Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function show(Request $request, string $id): view
+    public function show(Request $request): view
     {
 
-        // $idtest = 9b7fddae-bb74-4b84-b226-f3f69cd4f454
+      
+        $product = Product::where('id', '=', $request->id)->get()[0];
 
-        $value = $request->session()->get('test');
-        echo $value;
-        $product = Product::find($id);
+
         $productOptions= (empty($product->productOptions))?'null': $product->productOptions;
+
+
         $productCategory= (empty($product->category))?'null': $product->category;
         $productComments= (empty($product->comments))?'null': $product->comments;
         $productImg= (empty($productOptions[0]->url_img))?'null': $productOptions[0]->url_img;
-
+//        dd($product->name);
 
         $nbreProduct = 0;
         if ($request->session()->get('cart')){
             $cart =  $request->session()->get('cart');
-            foreach ($cart as $key => $product){
-                $nbreProduct += $product;
+            foreach ($cart as $key => $cartProduct){
+                $nbreProduct += $cartProduct;
             }
         }
+//        dd($product);
 
-
+//        dd($productImg->main_img);
 
 
         return view('Product.show', [
@@ -89,9 +77,6 @@ class ProductController extends Controller
             'productComments' => $productComments,
             'productImg' => $productImg,
             'nbreProduct' => $nbreProduct
-
-
-
         ]);
     }
 }

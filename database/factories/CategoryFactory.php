@@ -31,6 +31,32 @@ class CategoryFactory extends Factory
             'image9.webp',
             'image10.webp',
         ];
+        $categoriesName = [
+            'COUTEAUX / HACHES',
+            'SAC ET TRANSPORT',
+            'TENTE',
+            'ORIENTATION',
+            'COUCHAGE',
+            'SECOURS / SOIN',
+            'FEU',
+            'MONTRE',
+            'VÊTEMENT',
+            'REPAS / ACCESSOIRES REPAS'
+        ];
+        $slugsName = [
+            'couteaux-haches',
+            'sac-et-transport',
+            'tente',
+            'orientation',
+            'couchage',
+            'secours-soin',
+            'feu',
+            'montre',
+            'vetement',
+            'repas-accesoires-repas'
+        ];
+        $categoryName = $categoriesName[$imageIndex];
+        $slugName = $slugsName[$imageIndex];
         $imagePath = $imagesDirectory.$imagesFiles[$imageIndex];
         $imageIndex++;
         // Réinitialiser l'index si on atteint la fin de la liste des fichiers
@@ -38,9 +64,9 @@ class CategoryFactory extends Factory
             $imageIndex = 0;
         }
         return [
-            'name' => fake()->name(),
+            'name' => $categoryName,
             'img' => $imagePath,
-            'slug' => fake()->slug(2)
+            'slug' => $slugName
         ];
     }
 }

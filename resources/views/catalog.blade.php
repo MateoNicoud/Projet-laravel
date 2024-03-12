@@ -19,18 +19,21 @@
         <img src="{{$categories[$a]->img}}" alt="photo représentant la catégorie" class="min-h-fit" >
         </figure>
     </div>
+
     </div>
 
     <div>
         <div>
             <h1 class="flex py-10 text-2xl font-bold tracking-tight text-gray-900 ml-[15%]"> Catégorie
                 - {{$category['name']}} </h1>
+
         </div>
         <div class="py-5">
             <nav class="flex justify-center hidden lg:flex flex-wrap xl:flex-nowrap lg:space-x-8 lg:py-2"
                  aria-label="Global">
                 @foreach($categories as $category)
                     <a href="/catalog/{{$category->slug}}"
+
                        class="bg-gray-900 text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium">{{$category->name}}</a>
                 @endforeach
             </nav>
@@ -128,6 +131,7 @@
                                         @endif</p>
                                 </div>
                             </div>
+
                             </a>
                             <div class="mt-6 flex justify-center">
                                 <form method="post" action="{{route('addToCart', [$product->id, 'order'])}}">

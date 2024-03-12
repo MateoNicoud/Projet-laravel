@@ -4,7 +4,8 @@
             <div class="relative z-10 flex px-2 lg:px-0">
                 <div class="flex flex-shrink-0 items-center">
                     <a href="/">
-                        <img class="block h-8 w-auto" src="{{ asset('assets/icons/logo_desktop.svg') }}" alt="Your Company">
+                        <img class="block h-8 w-auto" src="{{ asset('assets/icons/logo_desktop.svg') }}"
+                             alt="Your Company">
                     </a>
                 </div>
             </div>
@@ -21,7 +22,7 @@
                                           clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <input id="search"  name="search"
+                            <input id="search" name="search"
                                    class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                    placeholder="Search" type="text">
                         </div>
@@ -30,23 +31,28 @@
             </div>
             <div class="relative z-10 flex items-center lg:hidden">
                 <!-- Mobile menu button -->
-                <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                <button type="button"
+                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open menu</span>
                     <!--
                       Icon when menu is closed.
 
                       Menu open: "hidden", Menu closed: "block"
                     -->
-                    <svg id="icon_burger" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    <svg id="icon_burger" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                     </svg>
                     <!--
                       Icon when menu is open.
 
                       Menu open: "block", Menu closed: "hidden"
                     -->
-                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                         aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
             </div>
@@ -54,12 +60,16 @@
                 @if (Route::has('login'))
                     <div class="">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                            <a href="{{ url('/dashboard') }}"
+                               class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                         @else
-                            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                            <a href="{{ route('login') }}"
+                               class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
+                                in</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                <a href="{{ route('register') }}"
+                                   class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
                             @endif
                         @endauth
                     </div>
@@ -67,10 +77,18 @@
                 <!-- Profile dropdown -->
                 <div class="relative ml-4 flex-shrink-0">
                     <div>
-                        <button type="button" class="relative flex bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                        <button type="button"
+                                class="relative flex bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                             <span class="sr-only">Ouvre ton panier</span>
                             @if(isset($nbreProduct))
-                                <span class="absolute text-xs text-white -top-2 -right-2 px-2 py-1 bg-red-600 rounded-full">{{$nbreProduct}}</span>
+                                @if($nbreProduct > 99)
+                                    <span
+                                        class="absolute text-xs text-white -top-2 -right-2 px-2 py-1 bg-red-600 rounded-full">99+</span>
+                                @else
+                                    <span
+                                        class="absolute text-xs text-white -top-2 -right-2 px-2 py-1 bg-red-600 rounded-full">{{$nbreProduct}}</span>
+                                @endif
                             @endif
                             <img class="h-8 w-8 " src="{{asset('assets/icons/logo_cart.svg')}}" alt="">
                         </button>
@@ -92,7 +110,8 @@
         </div>
         <nav class="hidden lg:flex flex-wrap xl:flex-nowrap lg:space-x-8 lg:py-2" aria-label="Global">
             @foreach($categories as $category)
-                <a href="/{{$category->slug}}" class="bg-gray-100 text-gray-900 inline-flex items-center rounded-md py-2 px-3 text-sm font-medium">{{$category->name}}</a>
+                <a href="/{{$category->slug}}"
+                   class="bg-gray-100 text-gray-900 inline-flex items-center rounded-md py-2 px-3 text-sm font-medium">{{$category->name}}</a>
             @endforeach
         </nav>
     </div>
@@ -102,7 +121,8 @@
         <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-900 hover:bg-gray-50 hover:text-gray-900" -->
             @foreach($categories as $category)
-                <a href="/{{$category->slug}}" class="text-gray-900 hover:bg-gray-50 hover:text-gray-900 block rounded-md py-2 px-3 text-base font-medium">{{$category->name}}</a>
+                <a href="/{{$category->slug}}"
+                   class="text-gray-900 hover:bg-gray-50 hover:text-gray-900 block rounded-md py-2 px-3 text-base font-medium">{{$category->name}}</a>
             @endforeach
         </div>
         <hr class="flex justify-center border-solid border-1 border-neutral-300 w-8/12 mx-auto rounded-full my-6">
@@ -110,23 +130,27 @@
             @if (Route::has('login'))
                 <div class="">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}"
+                           class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                        <a href="{{ route('login') }}"
+                           class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
+                            in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                            <a href="{{ route('register') }}"
+                               class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
         </div>
         <hr class="flex justify-center border-solid border-1 border-neutral-300 w-8/12 mx-auto rounded-full my-6">
-            <div class="mt-3 flex justify-center" >
-                <a class="w-20 bg-sky-300 rounded-lg" >
-                    <img class="p-3 mx-auto" src="{{asset('assets/icons/logo_cart.svg')}}">
-                </a>
-            </div>
+        <div class="mt-3 flex justify-center">
+            <a class="w-20 bg-sky-300 rounded-lg">
+                <img class="p-3 mx-auto" src="{{asset('assets/icons/logo_cart.svg')}}">
+            </a>
+        </div>
         </div>
     </nav>
 </header>

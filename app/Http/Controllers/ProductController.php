@@ -16,7 +16,18 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
+        $slug = $request->slug;
+        $categories = \App\Models\Category::all();
 
+        $i=0;
+while($i < 10) {
+    if ($categories[$i]->slug == $slug) {
+
+    $numbercategory = $i;
+}
+    $i++;
+}
+//dd($request);
 
         $category = Category::where('slug', '=', $request->slug)->first()->load('products', 'products.productOptions');
 
@@ -37,9 +48,10 @@ class ProductController extends Controller
 
             'categoryProducts' => $category->products,
             'categoryName' => $category->name,
-
             'minimumPrices' => $minimumPrices,
-            'nbreProduct' => $nbreProduct
+            'nbreProduct' => $nbreProduct,
+            'slug' => $slug,
+            'numbercategory' => $numbercategory
         ]);
     }
 
@@ -48,7 +60,7 @@ class ProductController extends Controller
     public function show(Request $request): view
     {
 
-      
+
         $product = Product::where('id', '=', $request->id)->get()[0];
 
 

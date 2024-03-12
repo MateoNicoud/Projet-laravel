@@ -13,7 +13,7 @@
     <div>
         <div>
             <h1 class="flex py-10 text-2xl font-bold tracking-tight text-gray-900 ml-48"> Catégorie
-                - {{$categoryName['name']}} </h1>
+                - {{$categoryName}} </h1>
         </div>
         <div class="py-5">
             <nav class="flex justify-center hidden lg:flex flex-wrap xl:flex-nowrap lg:space-x-8 lg:py-2"

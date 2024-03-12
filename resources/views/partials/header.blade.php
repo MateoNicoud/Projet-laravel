@@ -110,7 +110,7 @@
         </div>
         <nav class="hidden lg:flex flex-wrap xl:flex-nowrap lg:space-x-8 lg:py-2" aria-label="Global">
             @foreach($categories as $category)
-                <a href="/{{$category->slug}}"
+                <a href="/catalog/{{$category->slug}}"
                    class="bg-gray-100 text-gray-900 inline-flex items-center rounded-md py-2 px-3 text-sm font-medium">{{$category->name}}</a>
             @endforeach
         </nav>
@@ -121,7 +121,7 @@
         <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-900 hover:bg-gray-50 hover:text-gray-900" -->
             @foreach($categories as $category)
-                <a href="/{{$category->slug}}"
+                <a href="/catalog/{{$category->slug}}"
                    class="text-gray-900 hover:bg-gray-50 hover:text-gray-900 block rounded-md py-2 px-3 text-base font-medium">{{$category->name}}</a>
             @endforeach
         </div>

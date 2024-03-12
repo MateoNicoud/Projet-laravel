@@ -32,7 +32,7 @@
             @for($item=0;$item<2;$item++)
                 {{--    @foreach($categories as $item)--}}
                 <!--{{$categories[$item]->name}} -->
-                <a href="http://last_man.local/{{$categories[$item]->slug}}">
+                <a href="http://last_man.local/catalog/{{$categories[$item]->slug}}">
                     <div class="card max-w-max bg-base-100 shadow-none image-full rounded-none">
                         <figure>
                             <img src="{{$categories[$item]->img}}" alt="liens vers couteaux/haches"/>
@@ -54,7 +54,7 @@
             @for($item=2;$item<5;$item++)
                 {{--    @foreach($categories as $item)--}}
                 <!--{{$categories[$item]->name}} -->
-                <a href="http://last_man.local/{{$categories[$item]->slug}}">
+                <a href="http://last_man.local/catalog/{{$categories[$item]->slug}}">
                     <div class="card max-w-max bg-base-100 shadow-none image-full rounded-none">
                         <figure>
                             <img src="{{$categories[$item]->img}}" alt="liens vers couteaux/haches"/>
@@ -130,7 +130,7 @@
             @for($item=5;$item<8;$item++)
                 {{--    @foreach($categories as $item)--}}
                 <!--{{$categories[$item]->name}} -->
-                <a href="http://last_man.local/{{$categories[$item]->slug}}">
+                <a href="http://last_man.local/catalog/{{$categories[$item]->slug}}">
                     <div class="card max-w-max bg-base-100 shadow-none image-full rounded-none">
                         <figure>
                             <img src="{{$categories[$item]->img}}" alt="liens vers couteaux/haches"/>
@@ -152,7 +152,7 @@
             @for($item=8;$item<10;$item++)
                 {{--    @foreach($categories as $item)--}}
                 <!--{{$categories[$item]->name}} -->
-                <a href="http://last_man.local/{{$categories[$item]->slug}}">
+                <a href="http://last_man.local/catalog/{{$categories[$item]->slug}}">
                     <div class="card max-w-max bg-base-100 shadow-none image-full rounded-none">
                         <figure>
                             <img src="{{$categories[$item]->img}}" alt="liens vers couteaux/haches"/>

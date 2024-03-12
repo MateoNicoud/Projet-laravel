@@ -14,31 +14,26 @@ use App\Models\ProductOption;
 class ProductController extends Controller
 {
 
-    public function index(string $slug, Request $request)
+    public function index(Request $request)
     {
 
-        $id = Category::where('slug', '=', $slug)->get();
-//        dd($request->all());
-        $categoryProducts = Product::with('productOptions:id,price_ttc,product_id')->where('category_id', '=', $id[0]['id'])->get();
-        $categoryName = Category::where('slug', '=', $slug)->get();
+        $category = Category::where('slug', '=', $request->slug)->first()->load('products', 'products.productOptions');
 
-
-
-        foreach ($categoryProducts as $product) {
+        foreach ($category->products as $product) {
                 $minimumPrices[$product->id] = $product->productOptions->min('price_ttc');
         }
 
         $nbreProduct = 0;
         if ($request->session()->get('cart')){
             $cart =  $request->session()->get('cart');
-            foreach ($cart as $key => $product){
+            foreach ($cart as $product){
                 $nbreProduct += $product;
             }
         }
 
         return view('catalog', [
-            'categoryProducts' => $categoryProducts,
-            'categoryName' => $categoryName[0],
+            'categoryProducts' => $category->products,
+            'categoryName' => $category->name,
             'minimumPrices' => $minimumPrices,
             'nbreProduct' => $nbreProduct
         ]);

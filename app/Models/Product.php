@@ -19,6 +19,7 @@ class Product extends Model
         'reference',
         'slug',
         'brand',
+        'category_id'
     ];
 
 

@@ -16,26 +16,28 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        $id = Category::where('slug', '=', $request->slug)->get();
-        $categoryProducts = Product::with('productOptions:id,price_ttc,product_id')->where('category_id', '=', $id[0]['id'])->get();
-        $category = Category::select('name','img','slug')->where('slug', '=', $request->slug)->get();
 
 
-        foreach ($categoryProducts as $product) {
+        $category = Category::where('slug', '=', $request->slug)->first()->load('products', 'products.productOptions');
+
+        foreach ($category->products as $product) {
+
                 $minimumPrices[$product->id] = $product->productOptions->min('price_ttc');
         }
 
         $nbreProduct = 0;
         if ($request->session()->get('cart')){
             $cart =  $request->session()->get('cart');
-            foreach ($cart as $key => $product){
+            foreach ($cart as $product){
                 $nbreProduct += $product;
             }
         }
 
         return view('catalog', [
-            'categoryProducts' => $categoryProducts,
-            'category' => $category[0],
+
+            'categoryProducts' => $category->products,
+            'categoryName' => $category->name,
+
             'minimumPrices' => $minimumPrices,
             'nbreProduct' => $nbreProduct
         ]);

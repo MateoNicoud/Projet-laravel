@@ -25,7 +25,7 @@
     <div>
         <div>
             <h1 class="flex py-10 text-2xl font-bold tracking-tight text-gray-900 ml-[15%]"> Catégorie
-                - {{$category['name']}} </h1>
+                - {{$categoryName}} </h1>
 
         </div>
         <div class="py-5">

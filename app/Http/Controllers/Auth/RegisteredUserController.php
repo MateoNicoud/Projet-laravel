@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'credential_id' => "9b83e29e-85a0-4215-8402-f7d95db61b47"
+            'credential_id' => "9b89c079-1a8e-4210-9b22-ed5393d78f52"
         ]);
 
         event(new Registered($user));

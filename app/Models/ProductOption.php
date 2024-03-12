@@ -22,7 +22,11 @@ class ProductOption extends Model
         'price_vat',
         'price_vat',
         'weight',
-        'stock'
+        'stock',
+        'product_id',
+        'vat_id',
+        'url_img_id'
+
     ];
 
    public function url_img(): BelongsTo

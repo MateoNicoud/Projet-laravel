@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Credential;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -30,6 +31,14 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
+        $permissions = Credential::all();
+        foreach ($permissions as $permission){
+            if ($permission->type_permission == 'client'){
+                $defautPermission = $permission->id;
+            }
+        }
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
@@ -42,7 +51,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'credential_id' => "9b89c079-1a8e-4210-9b22-ed5393d78f52"
+            'credential_id' => $defautPermission
         ]);
 
         event(new Registered($user));

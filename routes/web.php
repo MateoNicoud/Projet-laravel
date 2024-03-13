@@ -3,13 +3,11 @@
 
 use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\AddStorageController;
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\UpdateCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +39,9 @@ Route::get('/destroyCart',[CartController::class,'destroy'])->name('destroyCart'
 Route::post('/cart',[CartController::class,'store'])->name('storeCart');
 
 
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -51,12 +52,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/addStorage', [AddStorageController::class, 'index'])->name('addStorage');
     Route::post('/addStorage', [AddStorageController::class, 'store'])->name('addStorage');
-
     Route::post('/addStorage/{option}', [AddStorageController::class, 'destroy'])->name('addStorage');
+
 
     Route::get('/updateCategory', [UpdateCategoryController::class, 'index'])->name('updateCategory');
     Route::post('/updateCategory', [UpdateCategoryController::class, 'updateCategory'])->name('updateCategory');
 
+
+    Route::post('/updateProduct', [UpdateProductController::class, 'index'])->name('updateProduct');
+    Route::post('/productUpdated', [UpdateProductController::class, 'update'])->name('newProduct');
+    Route::get('/updateProduct', [UpdateProductController::class, 'putOnCookie'])->name('selectProduct');
 });
 
 require __DIR__.'/auth.php';

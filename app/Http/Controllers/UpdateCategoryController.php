@@ -31,7 +31,7 @@ class UpdateCategoryController extends Controller
             'slug' => Str::slug($request->name)
         ]);
 
-        return redirect('/dashboard');
+        return redirect('/updateCategory');
 
     }
 }

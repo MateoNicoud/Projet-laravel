@@ -76,7 +76,7 @@ class AddStorageController extends Controller
                 'stock' => $request->stock
             ]);
 
-        return redirect('/dashboard');
+        return redirect('/addStorage');
 
     }
 }

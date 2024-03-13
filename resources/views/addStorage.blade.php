@@ -10,6 +10,8 @@
                     <a href="#" class="mx-4 px-4">Modifier produit</a>
                     <a href="{{route('updateCategory')}}" class="mx-4 px-4">Modifier une catégorie</a>
                     <a href="#" class="mx-4 px-4">Gestion des utilisateurs</a>
+                    <a href="{{route("updateCategory")}}" class="mx-4 px-4">Modifier catégorie</a>
+                    <a href="{{route("updateProduct")}}" class="mx-4 px-4">Modifier Produit</a>
                 </div>
             </div>
             <div class="flex">
@@ -27,16 +29,16 @@
         <form action="{{route('addStorage')}}" method="post" class="mt-10">
             @csrf
             <div class="flex flex-col">
-                <labe>Nom du produit</labe>
+                <label>Nom du produit</label>
                 <input name="name" class="rounded-md" type="text">
             </div>
             <div class="flex flex-col">
-                <labe>Marque</labe>
+                <label>Marque</label>
                 <input name="brand" class="rounded-md" type="text">
             </div>
             <div class="flex justify-between flex-wrap">
                 <div class="flex flex-col">
-                    <labe>Prix</labe>
+                    <label>Prix</label>
                     <div class="flex items-center">
                         <input name="price_ttc" class="rounded-md" type="number" min="0" step="0.01">
                         <span class="ml-4 text-lg">€</span>
@@ -44,7 +46,7 @@
 
                 </div>
                 <div class="flex flex-col">
-                    <labe>TVA</labe>
+                    <label>TVA</label>
                     <select name="vat" class="rounded-lg">
                         <option>-- Selectionner une TVA --</option>
                         @if(empty(!$vats))
@@ -57,7 +59,7 @@
             </div>
 
             <div class="flex flex-col flex-wrap">
-                <labe>Catégorie</labe>
+                <label>Catégorie</label>
                 <select name="category" class="rounded-lg">
                     <option>-- Sélectionner une catégorie --</option>
                     @if(empty(!$categories))
@@ -69,19 +71,19 @@
                 </select>
             </div>
             <div class="flex flex-col">
-                <labe>Description</labe>
+                <label>Description</label>
                 <input class="rounded-md" name="description" type="text">
             </div>
             <div class="flex items-center justify-between flex-wrap">
                 <div class="flex flex-col">
-                    <labe>Stock</labe>
+                    <label>Stock</label>
                     <div>
                         <input class="rounded-md" name="stock" type="number" min="0">
                         <span class="ml-4">Unité</span>
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <labe>Poids</labe>
+                    <label>Poids</label>
                     <div class="flex items-center">
                         <input class="rounded-md" name="weight" type="number" min="0" step="0.01">
                         <span class="ml-4">Kg</span>
@@ -90,7 +92,7 @@
             </div>
 
             <div class="flex flex-col">
-                <labe>Option</labe>
+                <label>Option</label>
                 <input class="rounded-md" name="option" type="text">
             </div>
             <div class="flex items-center justify-center mt-10">

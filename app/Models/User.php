@@ -69,4 +69,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Address::class);
     }
+
+    public function isAdmin(){
+        $permisison = $this->credential->type_permission;
+        //dd($this->credential->type_permission);
+        if ($permisison == 'admin'){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }

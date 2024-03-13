@@ -17,6 +17,7 @@
                     @csrf
                     <input class="mx-6 px-6 hover:cursor-pointer" type="submit" value="Déconnexion">
                 </form>
+                <h3>{{$user->name}}</h3>
             </div>
         </div>
     </nav>

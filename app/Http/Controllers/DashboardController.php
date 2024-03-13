@@ -10,8 +10,7 @@ class DashboardController extends Controller
     public function index (Request $request){
 
 
-        $user = $request->user();
-
+        $user = $request->user()->load('credential');
         return view('dashboardperso', ['user' => $user]);
     }
 }

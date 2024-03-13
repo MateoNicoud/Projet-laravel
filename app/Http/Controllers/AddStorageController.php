@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddStorage;
+use App\Http\Requests\AddStorageRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductOption;
@@ -66,7 +67,7 @@ class AddStorageController extends Controller
             [
                 'product_id' => $product->id,
                 'vat_id' => $request->vat,
-                'url_img_id' => '9b8d7dcd-2faa-4b49-b5bb-b506ef675f84',
+                'url_img_id' => '9b8dc03a-397b-4680-a575-2093854c3528',
                 'option' => $request->option,
                 'price_ht' => $price_ht,
                 'price_ttc' => $request->price_ttc,

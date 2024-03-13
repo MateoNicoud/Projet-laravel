@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateCategory;
+use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,9 +21,8 @@ class UpdateCategoryController extends Controller
 
     }
 
-    public function updateCategory(UpdateCategory $request)
+    public function updateCategory(UpdateCategoryRequest $request)
     {
-        $validated = $request->validated();
 
         $id = $request->input('category');
         Category::find($id)->update([

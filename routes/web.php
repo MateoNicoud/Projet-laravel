@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\AddStorageController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductController;

@@ -48,7 +48,6 @@
                                             <p class="mt-1 text-sm font-medium text-gray-900">{{$product->price_ttc}}
                                                 €</p>
                                         </div>
-                                        <div>  la quantité est {{$product->qte}}</div>
                                         <form method="post" id="formValue" action="{{route('updateCart', $product->id)}}">
                                             @csrf
                                             <div class="mt-4 sm:mt-0 sm:pr-9">
@@ -103,7 +102,7 @@
             <dl class="mt-6 space-y-4">
                 <div class="flex items-center justify-between">
                     <dt class="text-sm text-gray-600">Subtotal</dt>
-                    <dd class="text-sm font-medium text-gray-900">$99.00</dd>
+                    <dd class="text-sm font-medium text-gray-900">{{$total}} €</dd>
                 </div>
                 <div class="flex items-center justify-between border-t border-gray-200 pt-4">
                     <dt class="flex items-center text-sm text-gray-600">
@@ -149,6 +148,10 @@
         </form>
     </div>
     </div>
+    le total est :
+
+        {{$total}}
+
 
 @endsection
 

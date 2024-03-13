@@ -15,7 +15,7 @@ class CartController extends Controller
     public function index(Request $request)
     {
 
-
+        $total=0;
         $cart = $request->session()->get('cart');
         $viewedCart = [];
         foreach ($cart as $id => $qte) {
@@ -25,8 +25,12 @@ class CartController extends Controller
 
         }
 
+        foreach ($viewedCart as $product){
+             $total= $total+ $product->qte * $product->price_ttc;
+        }
         return view('cart', [
-                'cart' => $viewedCart
+                'cart' => $viewedCart,
+                'total'=> $total
             ]
         );
     }

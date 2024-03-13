@@ -50,7 +50,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/addStorage', [AddStorageController::class, 'index'])->name('addStorage');
     Route::post('/addStorage', [AddStorageController::class, 'store'])->name('addStorage');
+
     Route::post('/addStorage/{option}', [AddStorageController::class, 'destroy'])->name('addStorage');
+
     Route::get('/updateCategory', [UpdateCategoryController::class, 'index'])->name('updateCategory');
     Route::post('/updateCategory', [UpdateCategoryController::class, 'updateCategory'])->name('updateCategory');
 

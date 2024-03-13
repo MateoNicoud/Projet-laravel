@@ -34,11 +34,12 @@ Route::get('/search', [SearchController::class, 'getProducts']);
 
 Route::post('addToCart/{id}', [AddProductController::class, 'addCart'])->name('addToCart');
 
+Route::get('/cart',[CartController::class,'index'])->name('cart');
+Route::post('/updateCart/{id}',[CartController::class,'update'])->name('updateCart');
+Route::get('/destroyCart',[CartController::class,'destroy'])->name('destroyCart');
+Route::post('/cart',[CartController::class,'store'])->name('storeCart');
 
 
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -49,6 +50,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/addStorage', [AddStorageController::class, 'index'])->name('addStorage');
     Route::post('/addStorage', [AddStorageController::class, 'store'])->name('addStorage');
+
+    Route::post('/addStorage/{option}', [AddStorageController::class, 'destroy'])->name('addStorage');
+
     Route::get('/updateCategory', [UpdateCategoryController::class, 'index'])->name('updateCategory');
     Route::post('/updateCategory', [UpdateCategoryController::class, 'updateCategory'])->name('updateCategory');
 

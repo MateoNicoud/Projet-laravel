@@ -27,7 +27,7 @@ while($i < 10) {
 }
     $i++;
 }
-//dd($request);
+
 
         $category = Category::where('slug', '=', $request->slug)->first()->load('products', 'products.productOptions');
 
@@ -43,9 +43,8 @@ while($i < 10) {
                 $nbreProduct += $product;
             }
         }
-
+        //dd($category->products);
         return view('catalog', [
-
             'categoryProducts' => $category->products,
             'categoryName' => $category->name,
             'minimumPrices' => $minimumPrices,
@@ -61,7 +60,7 @@ while($i < 10) {
     {
 
 
-        $product = Product::where('id', '=', $request->id)->get()[0];
+            $product = Product::where('id', '=', $request->id)->get()[0];
 
 
         $productOptions= (empty($product->productOptions))?'null': $product->productOptions;

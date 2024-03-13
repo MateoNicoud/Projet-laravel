@@ -43,4 +43,5 @@ class AddProductController extends Controller
             return back();
         }
     }
+
 }

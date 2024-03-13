@@ -4,12 +4,12 @@
 
 
     <div class="flex mt-10 justify-center">
-    <div class="card image-full min-h-[650px]">
+        <div class="card image-full min-h-[650px]">
 
-        <figure>
-        <img src="{{$categories[$numbercategory]->img}}" alt="photo représentant la catégorie" class="min-h-fit" >
-        </figure>
-    </div>
+            <figure>
+                <img src="{{$categories[$numbercategory]->img}}" alt="photo représentant la catégorie" class="min-h-fit" >
+            </figure>
+        </div>
 
     </div>
 
@@ -24,8 +24,7 @@
                  aria-label="Global">
                 @foreach($categories as $category)
                     <a href="/catalog/{{$category->slug}}"
-
-                       class="bg-gray-900 text-white inline-flex items-center rounded-md py-2 px-3 text-sm font-medium">{{$category->name}}</a>
+                       class="bg-gray-900 text-white inline-flex items-center rounded-md py-2 m-3 px-3 text-sm font-medium">{{$category->name}}</a>
                 @endforeach
             </nav>
         </div>
@@ -85,22 +84,10 @@
 
                         <div>
                             <a href="/products/{{$product->id}}">
-                            <div class="relative">
+                                <div class="relative">
 
 
-                                <div class="relative h-72 w-full overflow-hidden rounded-lg">
-
-
-
-
-
-
-
-
-                                    <img
-                                        src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
-                                        alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
-                                        class="h-full w-full object-cover object-center">
+                                    <div class="relative h-72 w-full overflow-hidden rounded-lg">
 
 
 
@@ -108,24 +95,36 @@
 
 
 
+
+                                        <img
+                                            src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
+                                            alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                                            class="h-full w-full object-cover object-center">
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="relative mt-4">
+                                        <h3 class="text-sm font-medium text-gray-900">{{$product->brand}}</h3>
+                                        <p class="mt-1 text-sm text-gray-500">{{$product->name}}</p>
+                                    </div>
+                                    <div
+                                        class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                                        <div aria-hidden="true"
+                                             class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
+                                        <p class="relative text-lg font-semibold text-white">@if (isset($minimumPrices[$product->id]))
+                                                A partir de : {{$minimumPrices[$product->id]}}€
+                                            @endif</p>
+                                    </div>
                                 </div>
-                                <div class="relative mt-4">
-                                    <h3 class="text-sm font-medium text-gray-900">{{$product->brand}}</h3>
-                                    <p class="mt-1 text-sm text-gray-500">{{$product->name}}</p>
-                                </div>
-                                <div
-                                    class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-                                    <div aria-hidden="true"
-                                         class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
-                                    <p class="relative text-lg font-semibold text-white">@if (isset($minimumPrices[$product->id]))
-                                            A partir de : {{$minimumPrices[$product->id]}}€
-                                        @endif</p>
-                                </div>
-                            </div>
 
                             </a>
                             <div class="mt-6 flex justify-center">
-                                <form method="post" action="{{route('addToCart', [$product->productOptions[0]->id, 'order'])}}">
+                                <form method="post" action="{{route('addToCart', [$product->id, 'order'])}}">
                                     @csrf
                                     <input type="hidden" name="qte_product" value="1">
                                     <input type="Submit" name="btn_cart" value="Ajouter au panier"

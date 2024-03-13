@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddStorage;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductOption;
 use App\Models\Vat;
-//use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -27,7 +27,10 @@ class AddStorageController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(AddStorageRequest $request){
+
+
+
 
         if (!Gate::allows('addStorage')){
             return redirect('/dashboard');
@@ -63,7 +66,7 @@ class AddStorageController extends Controller
             [
                 'product_id' => $product->id,
                 'vat_id' => $request->vat,
-                'url_img_id' => '9b89c079-a29e-4f4a-9f2d-af93f659f52c',
+                'url_img_id' => '9b8d7dcd-2faa-4b49-b5bb-b506ef675f84',
                 'option' => $request->option,
                 'price_ht' => $price_ht,
                 'price_ttc' => $request->price_ttc,

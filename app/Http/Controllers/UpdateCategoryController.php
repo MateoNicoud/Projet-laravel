@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateCategory;
 use App\Models\Category;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+//use App\Rules\UpdateCategory;
+
 
 class UpdateCategoryController extends Controller
 {
@@ -16,14 +20,11 @@ class UpdateCategoryController extends Controller
 
     }
 
-    public function updateCategory(Request $request)
+    public function updateCategory(UpdateCategory $request)
     {
-        $validated = $request->validate([
-//            'id' => ['exists:categories,id'],
-            'name' => ['required', 'unique:categories', 'max:255'],
-            'img' =>['max:255'],
-        ]);
-        $id = strip_tags($request->input('category'));
+        $validated = $request->validated();
+
+        $id = $request->input('category');
         Category::find($id)->update([
             'name' => $request->name,
             'img'=> $request->img,

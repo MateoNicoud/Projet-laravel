@@ -3,11 +3,14 @@
 
 use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\AddStorageController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UpdateCategoryController;
+use App\Http\Controllers\UpdateProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,7 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/addStorage', [AddStorageController::class, 'index'])->name('addStorage');
     Route::post('/addStorage', [AddStorageController::class, 'store'])->name('addStorage');
-    Route::post('/addStorage/{option}', [AddStorageController::class, 'destroy'])->name('addStorage');
+    Route::post('/addStorage/{option}', [AddStorageController::class, 'destroy'])->name('addStorageDelete');
 
 
     Route::get('/updateCategory', [UpdateCategoryController::class, 'index'])->name('updateCategory');

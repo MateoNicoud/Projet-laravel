@@ -2,45 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateCategory;
+use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
-use App\Models\Product;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+//use App\Rules\UpdateCategory;
+
 
 class UpdateCategoryController extends Controller
 {
-
-    public function index()
+    public function index(Request $request)
     {
 
-        $products = Product::all();
+        $categories = Category::all();
+        return view('/updateCategory', ['categories' => $categories]);
 
+    }
 
+    public function updateCategory(UpdateCategoryRequest $request)
+    {
 
-        return view('updateCategoryView',
-        [
-            'products' => $products,
+        $id = $request->input('category');
+        Category::find($id)->update([
+            'name' => $request->name,
+            'img'=> $request->img,
+            'slug' => Str::slug($request->name)
         ]);
+
+        return redirect('/updateCategory');
+
     }
-
-
-    public function update(Request $request)
-    {
-
-        $slug = Str::slug($request->name);
-
-
-
-        Category::find($request->id)->update(
-            [
-                'name' => $request->name,
-                'slug' => $slug
-            ]
-        );
-        return redirect('/dashboard');
-    }
-
-
-
-
 }

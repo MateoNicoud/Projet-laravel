@@ -9,10 +9,9 @@
                         <h1 class="text-lg mr-6"><a href="{{route('dashboard')}}">Dashboard</a></h1>
                         <div>
                             <a href="{{route('addStorage')}}" class="mx-4 px-4">Ajouter produit</a>
-                            <a href="#" class="mx-4 px-4">Modifier produit</a>
+                            <a href="{{route('selectProduct')}}" class="mx-4 px-4">Modifier produit</a>
+                            <a href="{{route('updateCategory')}}" class="mx-4 px-4">Modifier une catégorie</a>
                             <a href="#" class="mx-4 px-4">Gestion des utilisateurs</a>
-                            <a href="{{route("updateCategory")}}" class="mx-4 px-4">Modifier catégorie</a>
-                            <a href="{{route("selectProduct")}}" class="mx-4 px-4">Modifier Produit</a>
 
                         </div>
                     </div>

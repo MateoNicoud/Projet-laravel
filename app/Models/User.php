@@ -72,7 +72,6 @@ class User extends Authenticatable
 
     public function isAdmin(){
         $permisison = $this->credential->type_permission;
-        //dd($this->credential->type_permission);
         if ($permisison == 'admin'){
             return true;
         }else{

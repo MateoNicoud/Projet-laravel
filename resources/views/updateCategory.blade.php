@@ -39,7 +39,10 @@
             </div>
             <div class="flex flex-col">
                 <label>Nom de la catégorie</label>
-                <input name="name" class="rounded-md" type="text">
+                <input name="name" class="rounded-md @error('name') is-invalid @enderror" type="text">
+                @error('name')
+                <div class="alert alert-danger">geremy te juge</div>
+                @enderror
             </div>
             <div class="flex flex-col">
                 <label>Url image</label>

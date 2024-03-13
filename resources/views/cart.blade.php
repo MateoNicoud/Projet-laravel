@@ -48,18 +48,20 @@
                                             <p class="mt-1 text-sm font-medium text-gray-900">{{$product->price_ttc}}
                                                 €</p>
                                         </div>
-                                        <form method="get" id="formValue" action="{{route('updateCart')}}">
+                                        <div>  la quantité est {{$product->qte}}</div>
+                                        <form method="post" id="formValue" action="{{route('updateCart', $product->id)}}">
                                             @csrf
                                             <div class="mt-4 sm:mt-0 sm:pr-9">
                                                 <label for="quantity-0" class="sr-only">Quantity, Basic Tee</label>
                                                 <select id="{{$product->id}}" class="selector" name="{{$product->id}}"
                                                         class="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
                                                     @for($i = 1; $i <= 10; $i++)
-                                                        <option  value="{{$i}}">{{$i}}</option>
+                                                        <option @if($product->qte == $i)selected @endif   value=" {{$i}}">{{$i}}</option>
                                                     @endfor
                                                 </select>
                                                 <button type="submit">Mettre à jour</button>
                                             </div>
+
                                         </form>
                                         <div class="absolute right-0 top-0">
                                             <form method="get" action="{{route('destroyCart')}}">

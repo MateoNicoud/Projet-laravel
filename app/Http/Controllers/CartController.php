@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ProductOption;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class CartController extends Controller
 {
@@ -13,15 +14,15 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        dd($request);
+
 
         $cart = $request->session()->get('cart');
         $viewedCart = [];
         foreach ($cart as $id => $qte) {
-
             $product = ProductOption::where('id', '=', $id)->first()->load('product', 'url_img');
+            $product->qte = $qte;
             array_push($viewedCart, $product);
+
         }
 
         return view('cart', [
@@ -65,9 +66,16 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, string $id)
     {
-        dd($request);
+
+        $cart = $request->session()->get(key: 'cart');
+
+        $cart[$id] = (int)$request->input($id);
+        $request->session()->put('cart', $cart);
+
+//        dd($request->session()->get('cart'));
+        return back();
     }
 
     /**
@@ -80,6 +88,7 @@ class CartController extends Controller
         $idForDeleting = $request->input('product');
         unset($cart[$idForDeleting]);
         $request->session()->put('cart', $cart);
+        dd($request);
 
         return back();
 

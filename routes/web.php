@@ -8,6 +8,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UpdateCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/addStorage', [AddStorageController::class, 'index'])->name('addStorage');
     Route::post('/addStorage', [AddStorageController::class, 'store'])->name('addStorage');
+    Route::get('/updateCategory', [UpdateCategoryController::class, 'index'])->name('updateCategory');
+    Route::post('/updateCategory', [UpdateCategoryController::class, 'updateCategory'])->name('updateCategory');
 
 });
 

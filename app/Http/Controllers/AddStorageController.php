@@ -6,20 +6,32 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductOption;
 use App\Models\Vat;
+//use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class AddStorageController extends Controller
 {
     public function index(Request $request){
 
+
+
+        if (!Gate::allows('addStorage')){
+            return redirect('/dashboard');
+        }
+
         $categories = Category::all();
         $vats = Vat::all();
 
-        return view('/addStorage', ['categories' => $categories, 'vats' => $vats]);
+        return view('/addStorage', ['categories' => $categories, 'vats' => $vats, 'user' => $request->user()]);
 
     }
 
     public function store(Request $request){
+
+        if (!Gate::allows('addStorage')){
+            return redirect('/dashboard');
+        }
 
         $vats = Vat::all();
 
